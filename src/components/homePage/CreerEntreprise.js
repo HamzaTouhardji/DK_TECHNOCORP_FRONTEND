@@ -1,4 +1,5 @@
 /* This example requires Tailwind CSS v2.0+ */
+import { Link } from 'react-router-dom'
 const content = [
     { name: "Creer votre SARL" },
     { name: "Creer votre EURL" },
@@ -14,7 +15,7 @@ export default function Example({ }) {
             {content.map((text) => (
                 <div key={text.name} className="border m-3 flex items-center px-6 py-4 whitespace-nowrap">
                     <div className="ml-4">
-                        <a href="/formulaire" className="text-sm font-medium text-gray-900">{text.name}</a>
+                        <Link to={`/formulaire/${text.name}`} className="text-sm font-medium text-gray-900">{text.name}</Link>
                     </div>
                 </div>
             ))}
