@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom"
-
+import DownloadPDF from '../DownloadPDF';
 
 export default class Entreprises extends React.Component {
     constructor() {
@@ -82,6 +82,9 @@ export default class Entreprises extends React.Component {
                                                 <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
                                                     {item.status}
                                                 </span>
+                                            </td>
+                                            <td className="px-6 py-4 whitespace-nowrap">
+                                                <DownloadPDF content={item.name} />
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <Link

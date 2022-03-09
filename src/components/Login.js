@@ -94,9 +94,12 @@ export default function Login() {
                             </label>
                         </div>
 
-                        <div className="text-sm">
+                        <div className="text-sm text-right">
                             <a href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                                 Forgot your password?
+                            </a> <br />
+                            <a href="/register" className="font-medium text-indigo-600 hover:text-indigo-500">
+                                créer un compte ?
                             </a>
                         </div>
                     </div>

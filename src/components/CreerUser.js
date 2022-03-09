@@ -67,7 +67,7 @@ export default function Register() {
         },
     ]
     return (
-        <div className="flex flex-row  justify-center items-center">
+        <div className="mb-10 flex flex-row  justify-center items-center">
             <div className="mt-5 md:mt-0 md:col-span-2">
                 <h1 className="my-20 text-5xl text-gray-800"> Créer son compte </h1>
                 <div className="w-full max-w-lg">
