@@ -47,7 +47,7 @@ export default function App() {
             <Route path="/creer-son-entreprise" element={<CreerEntreprise />} />
 
             <Route path="/modifier-son-entreprise" element={<ModifierEntreprise />} />
-            <Route path="/update" element={<UpdateEntreprise />} />
+            <Route name="/update" path="/:testvalue" element={<UpdateEntreprise />} />
             <Route path="/formulaire" element={<Formulaire />} />
             <Route path="/account" element={<EntrepriseLoading entreprises={appState.entreprises} />} />
             <Route path="*" element={<NoFoundPage />} />

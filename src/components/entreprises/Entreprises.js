@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom"
+
 
 export default class Entreprises extends React.Component {
     constructor() {
@@ -82,9 +84,18 @@ export default class Entreprises extends React.Component {
                                                 </span>
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="#" className="text-indigo-600 hover:text-indigo-900">
+                                                <Link
+                                                    className="text-indigo-600 hover:text-indigo-900"
+                                                    to={{
+                                                        pathname: "/update",
+                                                        testProps: {
+                                                            name: "test"
+                                                        }
+                                                    }}
+                                                >
                                                     Modifier
-                                                </a><br />
+                                                </Link>
+                                                <br />
                                                 <button type="submit" onClick={() => this.deleteEntreprise(item.id)} className="text-indigo-600 hover:text-indigo-900">
                                                     Supprimer
                                                 </button>
