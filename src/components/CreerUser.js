@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import SuscessMessage from './SuscessMessage';
+import { useCookies } from "react-cookie";
 
 export default function Register() {
 
+    const [cookies, setCookie] = useCookies(["user"]);
     const [formValue, setFormValue] = useState({
         email: "",
         user_name: "",
@@ -30,7 +32,7 @@ export default function Register() {
             },
         })
             .then(response => response.json())
-            .then((data) => console.log(data));
+            .then((data) => setCookie("user_token", data.token));
 
         setFormValue({
             user_name: "",

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/solid'
+import { useCookies } from "react-cookie";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-
+    const navigate = useNavigate();
+    const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const [formValue, setFormValue] = useState({
         email: "",
         password: "",
@@ -28,7 +31,11 @@ export default function Login() {
             },
         })
             .then(response => response.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                setCookie("user_token", data.access);
+
+                navigate('/');
+            });
 
         setFormValue({
             email: "",

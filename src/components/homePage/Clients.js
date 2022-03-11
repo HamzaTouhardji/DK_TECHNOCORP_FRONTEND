@@ -26,7 +26,7 @@ export default function Clients() {
             <div className="container">
                 <div className="flex flex-wrap -mx-4">
                     <div className="w-full px-4">
-                        <h1 class="text-5xl">Nos partenaire</h1>
+                        <h1 className="text-5xl">Nos partenaire</h1>
                         <div className="flex flex-wrap justify-center items-center">
                             {content.map((item) => (
                                 <div className=" w-[150px] 2xl:w-[180px] py-5 flex items-center justify-center mx-4 " >

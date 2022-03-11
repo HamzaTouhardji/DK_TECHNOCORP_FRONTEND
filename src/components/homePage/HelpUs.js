@@ -19,18 +19,18 @@ const content = [
 
 function HelpUs() {
     return (
-        <div class="flex w-full  justify-center">
+        <div className="flex w-full  justify-center">
             {content.map((item) => (
-                <div class="w-96 mx-5 py-4 px-8  bg-white shadow-lg rounded-lg">
-                    <div class="h-48">
-                        <h2 class="text-gray-800 text-3xl font-semibold">{item.title}</h2>
+                <div className="w-96 mx-5 py-4 px-8  bg-white shadow-lg rounded-lg">
+                    <div className="h-48">
+                        <h2 className="text-gray-800 text-3xl font-semibold">{item.title}</h2>
                         {item.content.map((textItem) => (
-                            <p class="mt-2 text-gray-600">{textItem.text}</p>
+                            <p className="mt-2 text-gray-600">{textItem.text}</p>
 
                         ))}
                     </div>
-                    <div class="flex justify-end mt-4  relative ">
-                        <a href="/" class="text-xl font-medium text-indigo-500 absolute bottom-0">En savoir plus !</a>
+                    <div className="flex justify-end mt-4  relative ">
+                        <a href="/" className="text-xl font-medium text-indigo-500 absolute bottom-0">En savoir plus !</a>
                     </div>
                 </div>
             ))}

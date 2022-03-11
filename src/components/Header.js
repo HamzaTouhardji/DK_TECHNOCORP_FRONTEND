@@ -14,6 +14,8 @@ import {
     ViewGridIcon,
     XIcon,
 } from '@heroicons/react/outline'
+import Logout from './Logout'
+import { useCookies } from "react-cookie";
 
 const solutions = [
     {
@@ -66,6 +68,8 @@ const resources = [
 ]
 
 export default function Header() {
+    const [cookies, setCookie, removeCookie] = useCookies(['user_token']);
+
     return (
         <Popover className="relative bg-white z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -92,12 +96,24 @@ export default function Header() {
                             <p>Gratuit</p>
                             <p>06 12 34 56 78</p>
                         </div>
-                        <a href="/login" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                            Sign up
-                        </a>
-                        <a href="/account" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-                            Account
-                        </a>
+                        {!cookies.user_token &&
+                            <>
+                                <a href="/login" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                                    Login
+                                </a>
+                                <a href="/register" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                                    Register
+                                </a>
+                            </>
+                        }
+                        {cookies.user_token &&
+                            <>
+                                <a href="/account" className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                                    Account
+                                </a>
+                                <Logout />
+                            </>
+                        }
                     </div>
                 </div>
             </div>
